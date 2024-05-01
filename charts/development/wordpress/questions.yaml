@@ -189,33 +189,39 @@ questions:
             subquestions:
               - variable: mariadbHost
                 label: MariaDB Host
-                schema: string
-                default: "mariadb.ix-mariadb.cluster.svc.local"
-                required: true
+                schema:
+                  type: string
+                  default: "mariadb.ix-mariadb.cluster.svc.local"
+                  required: true
               - variable: mariadbPort
                 label: MariaDB Port
-                schema: string
-                default: "3306"
-                required: true
+                schema:
+                  type: string
+                  default: "3306"
+                  required: true
               - variable: mariadbDatabase
                 label: MariaDB Database
-                schema: string
-                default: "wordpress"
-                required: true
+                schema:
+                  type: string
+                  default: "wordpress"
+                  required: true
               - variable: mariadbUsername
                 label: MariaDB Username
-                schema: string
-                default: "wordpress"
-                required: true
+                schema:
+                  type: string
+                  default: "wordpress"
+                  required: true
               - variable: mariadbPassword
                 label: MariaDB Password
-                schema: string
-                default: "wordpress"
-                required: true
+                schema:
+                  type: string
+                  default: "wordpress"
+                  required: true
               - variable: wordpressTablePrefix
                 label: MariaDB Table Prefix
-                schema: string
-                default: "wp_"
+                schema:
+                  type: string
+                  default: "wp_"
   - variable: php-config
     group: App Configuration
     label: PHP Configuration
