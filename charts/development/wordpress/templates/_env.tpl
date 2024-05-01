@@ -11,6 +11,7 @@ configmap:
       WORDPRESS_DATABASE_PORT_NUMBER: "3306"
       {{- else }}
       WORDPRESS_DATABASE_PORT_NUMBER: {{ .Values.mariadb.mariadbPort | quote }}
+      WORDPRESS_TABLE_PREFIX: {{ .Values.mariadb.wordpressTablePrefix | quote }}
       {{- end }}
       WORDPRESS_DATABASE_USER: {{ .Values.mariadb.mariadbUsername | quote }}
       WORDPRESS_DATABASE_NAME: {{ .Values.mariadb.mariadbDatabase | quote }}

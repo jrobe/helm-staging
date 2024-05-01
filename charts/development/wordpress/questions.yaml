@@ -82,7 +82,7 @@ questions:
             type: dict
             attrs:
               - variable: enabled
-                label: Enable SMTP
+                label: Specify your own Salts to use?
                 schema:
                   type: boolean
                   default: false
