@@ -78,57 +78,59 @@ questions:
             default: false
         - variable: specified_salts
           label: Specify Wordpress Salts
-          default: false
-          show_subquestions_if: true
-          subquestions:
-            - variable: wordpressAuthKey
-              label: Wordpress Auth Key
-              schema:
-                type: string
-                default: ""
-                required: true
-            - variable: wordpressSecureAuthKey
-              label: Wordpress Secure Auth Key
-              schema:
-                type: string
-                default: ""
-                required: true
-            - variable: wordpressLoggedInKey
-              label: Wordpress Logged In Key
-              schema:
-                type: string
-                default: ""
-                required: true
-            - variable: wordpressNonceKey
-              label: Wordpress Nonce Key
-              schema:
-                type: string
-                default: ""
-                required: true
-            - variable: wordpressAuthSalt
-              label: Wordpress Auth Salt
-              schema:
-                type: string
-                default: ""
-                required: true
-            - variable: wordpressSecureAuthSalt
-              label: Wordpress Secure Auth Salt
-              schema:
-                type: string
-                default: ""
-                required: true
-            - variable: wordpressLoggedInSalt
-              label: Wordpress Logged In Salt
-              schema:
-                type: string
-                default: ""
-                required: true
-            - variable: wordpressNonceSalt
-              label: Wordpress Nonce Salt
-              schema:
-                type: string
-                default: ""
-                required: true
+          schema:
+            type: boolean
+            default: false
+            show_subquestions_if: true
+            subquestions:
+              - variable: wordpressAuthKey
+                label: Wordpress Auth Key
+                schema:
+                  type: string
+                  default: ""
+                  required: true
+              - variable: wordpressSecureAuthKey
+                label: Wordpress Secure Auth Key
+                schema:
+                  type: string
+                  default: ""
+                  required: true
+              - variable: wordpressLoggedInKey
+                label: Wordpress Logged In Key
+                schema:
+                  type: string
+                  default: ""
+                  required: true
+              - variable: wordpressNonceKey
+                label: Wordpress Nonce Key
+                schema:
+                  type: string
+                  default: ""
+                  required: true
+              - variable: wordpressAuthSalt
+                label: Wordpress Auth Salt
+                schema:
+                  type: string
+                  default: ""
+                  required: true
+              - variable: wordpressSecureAuthSalt
+                label: Wordpress Secure Auth Salt
+                schema:
+                  type: string
+                  default: ""
+                  required: true
+              - variable: wordpressLoggedInSalt
+                label: Wordpress Logged In Salt
+                schema:
+                  type: string
+                  default: ""
+                  required: true
+              - variable: wordpressNonceSalt
+                label: Wordpress Nonce Salt
+                schema:
+                  type: string
+                  default: ""
+                  required: true
   - variable: smtp
     group: App Configuration
     label: SMTP Configuration
