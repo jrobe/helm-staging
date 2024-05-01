@@ -78,15 +78,15 @@ secret:
       {{- end }}
 
       {{/* Salts */}}
-      {{- if .Values.wordpress.specified_salts }}
-      WORDPRESS_AUTH_KEY: {{ .Values.wordpress.wordpressAuthKey | quote }}
-      WORDPRESS_SECURE_AUTH_KEY: {{ .Values.wordpress.wordpressSecureAuthKey | quote }}
-      WORDPRESS_LOGGED_IN_KEY: {{ .Values.wordpress.wordpressLoggedInKey | quote }}
-      WORDPRESS_NONCE_KEY: {{ .Values.wordpress.wordpressNonceKey | quote }}
-      WORDPRESS_AUTH_SALT: {{ .Values.wordpress.wordpressAuthSalt | quote }}
-      WORDPRESS_SECURE_AUTH_SALT: {{ .Values.wordpress.wordpressSecureAuthSalt | quote }}
-      WORDPRESS_LOGGED_IN_SALT: {{ .Values.wordpress.wordpressLoggedInSalt | quote }}
-      WORDPRESS_NONCE_SALT: {{ .Values.wordpress.wordpressNonceSalt | quote }}
+      {{- if .Values.wordpress.specified_salts.enabled }}
+      WORDPRESS_AUTH_KEY: {{ .Values.wordpress.specified_salts.wordpressAuthKey | quote }}
+      WORDPRESS_SECURE_AUTH_KEY: {{ .Values.wordpress.specified_salts.wordpressSecureAuthKey | quote }}
+      WORDPRESS_LOGGED_IN_KEY: {{ .Values.wordpress.specified_salts.wordpressLoggedInKey | quote }}
+      WORDPRESS_NONCE_KEY: {{ .Values.wordpress.specified_salts.wordpressNonceKey | quote }}
+      WORDPRESS_AUTH_SALT: {{ .Values.wordpress.specified_salts.wordpressAuthSalt | quote }}
+      WORDPRESS_SECURE_AUTH_SALT: {{ .Values.wordpress.specified_salts.wordpressSecureAuthSalt | quote }}
+      WORDPRESS_LOGGED_IN_SALT: {{ .Values.wordpress.specified_salts.wordpressLoggedInSalt | quote }}
+      WORDPRESS_NONCE_SALT: {{ .Values.wordpress.specified_salts.wordpressNonceSalt | quote }}
       {{- else }}
       WORDPRESS_AUTH_KEY: {{ include "wordpress.fetch" (dict "ns" .Release.Namespace "var" "WORDPRESS_AUTH_KEY" "secret" $secretName) }}
       WORDPRESS_SECURE_AUTH_KEY: {{ include "wordpress.fetch" (dict "ns" .Release.Namespace "var" "WORDPRESS_SECURE_AUTH_KEY" "secret" $secretName) }}
