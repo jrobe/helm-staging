@@ -191,7 +191,7 @@ questions:
                 label: MariaDB Host
                 schema:
                   type: string
-                  default: "mariadb.ix-mariadb.cluster.svc.local"
+                  default: "mariadb.ix-mariadb.svc.cluster.local"
                   required: true
               - variable: mariadbPort
                 label: MariaDB Port
